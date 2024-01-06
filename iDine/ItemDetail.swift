@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemDetail: View {
     @EnvironmentObject var order: Order
-    let item: MenuItem
+    let item: HPItem
 
     var body: some View {
         VStack {
@@ -18,21 +18,21 @@ struct ItemDetail: View {
                     .resizable()
                     .scaledToFit()
 
-                Text("Photo: \(item.photoCredit)")
-                    .padding(4)
-                    .background(Color.black)
-                    .font(.caption)
-                    .foregroundColor(.white)
-                    .offset(x: -5, y: -5)
+//                Text("Photo: \(item.photoCredit)")
+//                    .padding(4)
+//                    .background(Color.black)
+//                    .font(.caption)
+//                    .foregroundColor(.white)
+//                    .offset(x: -5, y: -5)
             }
 
-            Text(item.description)
+            Text(item.name)
                 .padding()
 
-            Button("Order This") {
-                order.add(item: item)
-            }
-            .buttonStyle(.borderedProminent)
+//            Button("Order This") {
+//                order.add(item: item)
+//            }
+//            .buttonStyle(.borderedProminent)
 
             Spacer()
         }
@@ -41,11 +41,11 @@ struct ItemDetail: View {
     }
 }
 
-struct ItemDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            ItemDetail(item: MenuItem.example)
-                .environmentObject(Order())
-        }
-    }
-}
+//struct ItemDetail_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationStack {
+//            ItemDetail(item: HPItem.example)
+//                .environmentObject(Order())
+//        }
+//    }
+//}

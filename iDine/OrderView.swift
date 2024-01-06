@@ -18,7 +18,7 @@ struct OrderView: View {
                         HStack {
                             Text(item.name)
                             Spacer()
-                            Text("$\(item.price)")
+                            //Text("$\(item.price)")
                         }
                     }
                     .onDelete(perform: deleteItems)
@@ -26,7 +26,7 @@ struct OrderView: View {
 
                 Section {
                     NavigationLink("Place Order") {
-                        CheckoutView()
+                       // CheckoutView()
                     }
                 }
                 .disabled(order.items.isEmpty)

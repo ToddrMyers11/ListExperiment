@@ -13,8 +13,10 @@ struct iDineApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            //MainView()
+            ContentView()
                 .environmentObject(order)
+            //SettingView()
         }
     }
 }

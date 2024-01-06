@@ -1,11 +1,11 @@
 [
 	{
         "id": "EF1CC5BB-4785-4D8E-AB98-5FA4E00B6A66",
-		"name": "Breakfast",
+		"name": "New Hall",
 		"items": [
 			{
                 "id": "EDCD038C-036F-4C40-826F-61C88CD84DDD",
-				"name": "Maple French Toast",
+				"name": "Todd Myers",
 				"photoCredit": "Joseph Gonzalez",
 				"price": 6,
 				"restrictions": ["G", "V"],
@@ -13,7 +13,7 @@
 			},
 			{
                 "id": "36A7CC40-18C1-48E5-BCD8-3B42D43BEAEE",
-				"name": "Stack-o-Pancakes",
+				"name": "Jamie McCombs",
 				"photoCredit": "Joseph Gonzalez",
 				"price": 8,
 				"restrictions": ["D", "G", "V"],
