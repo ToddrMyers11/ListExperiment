@@ -1,8 +1,7 @@
 //
 //  MainView.swift
-//  iDine
+//  PatientList
 //
-//  Created by Paul Hudson on 08/02/2021.
 //
 
 import SwiftUI
@@ -15,13 +14,13 @@ struct MainView: View {
             ContentView()
               
                 .tabItem {
-                    Label("Menu", systemImage: "list.dash")
+                    Label("Patients", systemImage: "list.dash")
                         
                 }
 
             OrderView()
                 .tabItem {
-                    Label("Order", systemImage: "square.and.pencil")
+                    Label("Notes", systemImage: "square.and.pencil")
                 }
         }
     }

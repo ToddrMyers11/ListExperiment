@@ -1,8 +1,7 @@
 //
 //  ItemDetail.swift
-//  iDine
 //
-//  Created by Paul Hudson on 08/02/2021.
+//
 //
 
 import SwiftUI
@@ -29,10 +28,6 @@ struct ItemDetail: View {
             Text(item.name)
                 .padding()
 
-//            Button("Order This") {
-//                order.add(item: item)
-//            }
-//            .buttonStyle(.borderedProminent)
 
             Spacer()
         }

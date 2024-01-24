@@ -1,8 +1,8 @@
 //
 //  OrderView.swift
-//  iDine
+//  
 //
-//  Created by Paul Hudson on 08/02/2021.
+
 //
 
 import SwiftUI

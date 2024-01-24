@@ -1,8 +1,7 @@
 //
-//  iDineApp.swift
-//  iDine
+//  PatientList.swift
 //
-//  Created by Paul Hudson on 08/02/2021.
+//
 //
 
 import SwiftUI
@@ -13,8 +12,8 @@ struct iDineApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //MainView()
-            ContentView()
+            MainView()
+            //ContentView()
                 .environmentObject(order)
             //SettingView()
         }

@@ -1,8 +1,6 @@
 //
 //  ItemRow.swift
-//  iDine
-//
-//  Created by Paul Hudson on 08/02/2021.
+
 //
 
 import SwiftUI
@@ -19,6 +17,7 @@ struct ItemRow: View {
                 .resizable()
                 .frame(width: 65, height: 65, alignment: .center)
                 .scaledToFill()
+                .clipped()
                 .clipShape(Rectangle())
                 .overlay(Rectangle().stroke(Color.gray, lineWidth: 2))
 
@@ -32,30 +31,7 @@ struct ItemRow: View {
                 Text(item.Diagnosis1)
             }
             }
-//        .swipeActions(allowsFullSwipe: false) {
-//            Button {
-//                
-//                print("Muting conversation")
-//            } label: {
-//                Label("Archive", systemImage: "archivebox")
-//            }
-//            .tint(.indigo)
-            
-//            Button("Show Alert") {
-//                showingAlert = true
-//            }
-//            .alert(isPresented:$showingAlert) {
-//                Alert(
-//                    title: Text("Are you sure you want to delete this?"),
-//                    message: Text("There is no undo"),
-//                    primaryButton: .destructive(Text("Delete")) {
-//                        print("Deleting...")
-//                    },
-//                    secondaryButton: .cancel()
-//                )
-//            }
-//        .alert(isPresented: $showingAlert) {
-//            Alert(title: Text("I am the Egg Man"))}
+
             
         }
             Spacer()
@@ -72,30 +48,3 @@ struct ItemRow: View {
         }
     }
 
-//struct AlertView: View {
-//    // 1
-//    @State private var showingAlert = false
-//
-//
-//    var body: some View {
-//        VStack {
-//            // 2
-//            Text(showingAlert ? "Presenting": "Dismissed")
-//
-//            Button("Alert") {
-//                // 3
-//                showingAlert = true
-//
-//            }
-//            Spacer()
-//        }
-//        .padding()
-//        .alert("Title", isPresented: $showingAlert, actions: {}) // 4
-//
-//    }
-//}
-//struct ItemRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ItemRow(item: MenuItem.example)
-//    }
-//}
