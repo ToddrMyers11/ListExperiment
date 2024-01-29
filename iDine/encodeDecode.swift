@@ -19,13 +19,18 @@ class Expenses: ObservableObject {
     }
     
     init() {
+        // Try to load saved data from the UserDefaults
         if let savedItems = UserDefaults.standard.data(forKey: "Items") {
+            // If that key exists, then try to decode the items from the UserDefaults into HPItems
             if let decodedItems = try? JSONDecoder().decode([HPItem].self, from: savedItems) {
                 items = decodedItems
-                return
+                if items.count < 0 {
+                    return
+                }
             }
         }
+        // If no items were found, then create new items from the JSON
+        items = Bundle.main.decode([HPItem].self, from: "HP.json")
         
-        items = []
     }
 }

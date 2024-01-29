@@ -17,9 +17,9 @@ struct ContentView: View {
     @State var name = "Enter Name"
     @State private var addPatientToggle = false
     @State private var deleteIndexSet: IndexSet?
-
+    
     var body: some View {
-       
+        
         NavigationStack {
             
             List {
@@ -31,19 +31,19 @@ struct ContentView: View {
                         }
                         //}
                     }//.onDelete(perform: delete)
-
+                    
                     .swipeActions(allowsFullSwipe: false) {
-//Archive Button
+                        //Archive Button
                         Button(role: .cancel) {
                             //Toggle("Toggle switch", isOn: $showingAlert)
-                                   //showingAlert = true
+                            //showingAlert = true
                             //AlertView()
                             //showingAlert = true
                         } label: {
                             Label("Archive", systemImage: "file.fill")
                         }
                         .tint(.indigo)
-//Delete Button
+                        //Delete Button
                         Button(role: .destructive) {
                             print("Deleting conversation")
                             showingAlert = true
@@ -56,28 +56,28 @@ struct ContentView: View {
                     //.onDelete(perform: delete)
                     //.onMove(perform: onMove)
                     .alert(isPresented:$showingAlert) {
-                                Alert(
-                                    title: Text("Are you sure you want to delete this?"),
-                                    message: Text("There is no undo"),
-                                    primaryButton: .destructive(Text("Delete")) {
-                                        print("Deleting...")
-                                       
-                                    },
-                                    secondaryButton: .cancel()
-                                )
-                            }
+                        Alert(
+                            title: Text("Are you sure you want to delete this?"),
+                            message: Text("There is no undo"),
+                            primaryButton: .destructive(Text("Delete")) {
+                                print("Deleting...")
+                                
+                            },
+                            secondaryButton: .cancel()
+                        )
+                    }
                     
                     //.swipeActions {
-//                               Button("Delete") {
-//                                   
-//                               }
-//                               .tint(.green)
-//                           }
+                    //                               Button("Delete") {
+                    //
+                    //                               }
+                    //                               .tint(.green)
+                    //                           }
                 }header: {
                     Text("Patients")
-                  } footer: {
+                } footer: {
                     Text("\(menu.count) patients")
-                  }
+                }
             }
             .navigationDestination(for: HPItem.self) { item in
                 ItemDetail(item: item)
@@ -95,34 +95,34 @@ struct ContentView: View {
             }
             .navigationBarTitle("Resident", displayMode: .inline)
             .listStyle(.grouped)
-//            .navigationBarItems(trailing: Button("Add") {
-//                            addPatientToggle.toggle()
-//                        }
-}
+            //            .navigationBarItems(trailing: Button("Add") {
+            //                            addPatientToggle.toggle()
+            //                        }
+        }
         
     }
     private func addItemToRow() {
         self.menu.append(HPItem(id: UUID(), name: name, Location: "VM", Room: 5, Diagnosis1: "", Restrictions: ["D", "V"], Physician: "", CC: "testCC", HPI: "", MedHx: "", SurgHx: "", SocHx: "", FamHx: "", ROS: "", Allergies: "", Medications: "", Vaccinations: "", PE: "", Assess: "", Plan: ""))
     }
-//        private func onDelete(offsets: IndexSet) {
-//            menu.remove(atOffsets: offsets)
-//            
-//        }
-//    func deleteConversion(at offsets: IndexSet) { menu.remove(atOffsets: offsets) }
-//        private func onMove(source: IndexSet, destination: Int) {
-//            menu.move(fromOffsets: source, toOffset: destination)
-//        }
-//    private func add() {
-//        menu.append("New Item")
+    //        private func onDelete(offsets: IndexSet) {
+    //            menu.remove(atOffsets: offsets)
+    //
+    //        }
+    //    func deleteConversion(at offsets: IndexSet) { menu.remove(atOffsets: offsets) }
+    //        private func onMove(source: IndexSet, destination: Int) {
+    //            menu.move(fromOffsets: source, toOffset: destination)
+    //        }
+    //    private func add() {
+    //        menu.append("New Item")
     //}
-
+    
     private func delete(at offsets: IndexSet) {
         menu.remove(atOffsets: offsets)
     }
-
-//    private func onMove(source: IndexSet, destination: Int) {
-//        menu.move(fromOffsets: source, toOffset: destination)
-//    }
+    
+    //    private func onMove(source: IndexSet, destination: Int) {
+    //        menu.move(fromOffsets: source, toOffset: destination)
+    //    }
 }
 
 
