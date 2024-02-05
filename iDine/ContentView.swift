@@ -8,7 +8,9 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddPatient = false
+    @State private var showingMoreSheet = false
     @State var showingAlert = false
+    //@State var showingMore = false
     @State var menu = Bundle.main.decode([HPItem].self, from: "HP.json")
     @State var name = "Enter Name"
     @State private var addPatientToggle = false
@@ -47,21 +49,29 @@ struct ContentView: View {
                             Label("Discharge", systemImage: "accessibility.badge.arrow.up.right")
                         }.imageScale(.small)
                             .tint(.indigo)
+                        
+                                                // MARK: More Button
+                                                Button {
+                                                    print("More")
+                                                    showingMoreSheet = true
+                        
+                                                } label: {
+                                                    Label("More", systemImage: "ellipsis")
+                                                }
                     
-                    
-//                    }.sheet(isPresented: $showingAddPatient) {
-//                        AddView(expenses: expenses)}
-                        // MARK: Delete Button
-                        Button(role: .destructive) {
-                            print("Deleting conversation")
-                            showingAlert = true
-                                                        
-                        } label: {
-                            Label("Delete", systemImage: "trash.fill")
+//                        // MARK: Delete Button
+//                        Button(role: .destructive) {
+//                            print("Deleting conversation")
+//                            showingAlert = true
+//                                                        
+//                        } label: {
+//                            Label("Delete", systemImage: "trash.fill")
+//                        }
+                    }.sheet(isPresented: $showingMoreSheet) {
+                        MoreView(info: expenses.items[0])
+                            .presentationDetents([.fraction(0.50)])
                         }
-                        }.sheet(isPresented: $showingAddPatient) {
-                            AddView(expenses: expenses)}
-                    //.font(.footnote)
+                    
                     
                     .alert("Delete Patient", isPresented: $showingAlert, actions: {
                         TextField("Username", text: $username)
