@@ -16,11 +16,16 @@ struct ItemRow: View {
                 // Use the computed property to obtain the appropriate image
                 item.currentImage
                     .resizable()
+                    .aspectRatio(contentMode: .fit) // This will maintain the aspect ratio
                     .frame(width: 65, height: 65)
-                    .scaledToFill()
                     .clipped()
-                    .clipShape(Rectangle())
-                    .overlay(Rectangle().stroke(Color.gray, lineWidth: 2))
+                    .clipShape(Circle()) // This will clip the image to a circle
+                    .overlay(Circle()
+                        .stroke(Color.gray, lineWidth: 2))
+//                    .clipShape(Rectangle())
+//                    .overlay(Rectangle()
+//                        .stroke(Color.gray, lineWidth: 2)) // Use Circle() to match the clip shape
+
                 
                 VStack(alignment: .leading) {
                     Text(item.name)

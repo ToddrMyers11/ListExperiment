@@ -42,14 +42,22 @@ struct HPItem: Codable, Hashable, Identifiable {
     var currentImage: Image {
         if let userImage = userSelectedImage {
             return Image(uiImage: userImage)
-        } else if let imageName = mainImageName {
+        } else if let imageName = mainImageName, UIImage(named: imageName) != nil {
+            // Check if the image exists in the assets and return it if so
             return Image(imageName)
         } else {
-            // Fallback to the old logic if mainImageName is not set
+            // The old logic to generate image names can still be used here as a secondary fallback
             let generatedImageName = name.replacingOccurrences(of: " ", with: "-").lowercased() + "-thumb"
-            return Image(generatedImageName)
+            // Check if the generated image exists in the assets
+            if UIImage(named: generatedImageName) != nil {
+                return Image(generatedImageName)
+            } else {
+                // If the image does not exist in the assets, default to a system image
+                return Image(systemName: "person.fill") // Example system image
+            }
         }
     }
+
     
 }
 
