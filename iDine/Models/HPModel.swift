@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct HPItem: Codable, Hashable, Identifiable {
+struct Patient: Codable, Hashable, Identifiable {
     var id: UUID
     var name: String
     var Location: String

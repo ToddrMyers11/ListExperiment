@@ -20,11 +20,11 @@
 		513D22DC25D16DC000C1A803 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22DB25D16DC000C1A803 /* Helper.swift */; };
 		513D22E025D16DD900C1A803 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22DE25D16DD900C1A803 /* Order.swift */; };
 		513D22E125D16DD900C1A803 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22DF25D16DD900C1A803 /* Menu.swift */; };
-		513D22EA25D17C4C00C1A803 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22E925D17C4C00C1A803 /* ItemDetail.swift */; };
+		513D22EA25D17C4C00C1A803 /* PatientDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22E925D17C4C00C1A803 /* PatientDetail.swift */; };
 		513D22ED25D1870E00C1A803 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EC25D1870E00C1A803 /* OrderView.swift */; };
 		513D22F025D1880700C1A803 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EF25D1880700C1A803 /* MainView.swift */; };
 		513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22F225D1B03500C1A803 /* CheckoutView.swift */; };
-		750D2E8C2B7806CB004844F2 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D2E8B2B7806CB004844F2 /* ItemRow.swift */; };
+		750D2E8C2B7806CB004844F2 /* PatientRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D2E8B2B7806CB004844F2 /* PatientRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,11 +43,11 @@
 		513D22DB25D16DC000C1A803 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		513D22DE25D16DD900C1A803 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		513D22DF25D16DD900C1A803 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		513D22E925D17C4C00C1A803 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
+		513D22E925D17C4C00C1A803 /* PatientDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetail.swift; sourceTree = "<group>"; };
 		513D22EC25D1870E00C1A803 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		513D22EF25D1880700C1A803 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		513D22F225D1B03500C1A803 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
-		750D2E8B2B7806CB004844F2 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		750D2E8B2B7806CB004844F2 /* PatientRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +108,13 @@
 			children = (
 				513D22CB25D16D9E00C1A803 /* iDineApp.swift */,
 				513D22CD25D16D9E00C1A803 /* ContentView.swift */,
-				513D22E925D17C4C00C1A803 /* ItemDetail.swift */,
+				513D22E925D17C4C00C1A803 /* PatientDetail.swift */,
 				513D22EC25D1870E00C1A803 /* OrderView.swift */,
 				513D22F225D1B03500C1A803 /* CheckoutView.swift */,
 				513D22EF25D1880700C1A803 /* MainView.swift */,
 				342843692B3DA3AC0032BA67 /* AddView.swift */,
 				3477EEC02B45E7A900FE8B14 /* AlertView.swift */,
-				750D2E8B2B7806CB004844F2 /* ItemRow.swift */,
+				750D2E8B2B7806CB004844F2 /* PatientRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513D22EA25D17C4C00C1A803 /* ItemDetail.swift in Sources */,
+				513D22EA25D17C4C00C1A803 /* PatientDetail.swift in Sources */,
 				513D22F025D1880700C1A803 /* MainView.swift in Sources */,
 				513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */,
 				513D22ED25D1870E00C1A803 /* OrderView.swift in Sources */,
@@ -217,7 +217,7 @@
 				513D22DC25D16DC000C1A803 /* Helper.swift in Sources */,
 				513D22E125D16DD900C1A803 /* Menu.swift in Sources */,
 				3477EEC12B45E7A900FE8B14 /* AlertView.swift in Sources */,
-				750D2E8C2B7806CB004844F2 /* ItemRow.swift in Sources */,
+				750D2E8C2B7806CB004844F2 /* PatientRow.swift in Sources */,
 				3428436A2B3DA3AC0032BA67 /* AddView.swift in Sources */,
 				3428436C2B3E041E0032BA67 /* encodeDecode.swift in Sources */,
 			);

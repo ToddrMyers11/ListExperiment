@@ -13,7 +13,7 @@ struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
     @State var showingAlert = false
-    @State var menu = Bundle.main.decode([HPItem].self, from: "HP.json")
+    @State var menu = Bundle.main.decode([Patient].self, from: "HP.json")
     @State var name = "Enter Name"
     @State private var addPatientToggle = false
     @State private var deleteIndexSet: IndexSet?
@@ -24,9 +24,10 @@ struct ContentView: View {
             
             List {
                 Section{
-                    ForEach(expenses.items, id: \.id) { item in
+                    ForEach(expenses.patients, id: \.id) { item in
+                        // MARK: Show Patient Summary & Photo
                         NavigationLink(value: item) {
-                            ItemRow(item: item)
+                            PatientRow(patient: item)
                             
                         }
                         //}
@@ -79,8 +80,8 @@ struct ContentView: View {
                     Text("\(menu.count) patients")
                 }
             }
-            .navigationDestination(for: HPItem.self) { item in
-                ItemDetail(item: item)
+            .navigationDestination(for: Patient.self) { item in
+                PatientDetail(item: item)
             }
             .navigationTitle("Patient")
             .toolbar {
@@ -102,7 +103,7 @@ struct ContentView: View {
         
     }
     private func addItemToRow() {
-        self.menu.append(HPItem(id: UUID(), name: name, Location: "VM", Room: 5, Diagnosis1: "", Restrictions: ["D", "V"], Physician: "", CC: "testCC", HPI: "", MedHx: "", SurgHx: "", SocHx: "", FamHx: "", ROS: "", Allergies: "", Medications: "", Vaccinations: "", PE: "", Assess: "", Plan: ""))
+        self.menu.append(Patient(id: UUID(), name: name, Location: "VM", Room: 5, Diagnosis1: "", Restrictions: ["D", "V"], Physician: "", CC: "testCC", HPI: "", MedHx: "", SurgHx: "", SocHx: "", FamHx: "", ROS: "", Allergies: "", Medications: "", Vaccinations: "", PE: "", Assess: "", Plan: ""))
     }
     //        private func onDelete(offsets: IndexSet) {
     //            menu.remove(atOffsets: offsets)

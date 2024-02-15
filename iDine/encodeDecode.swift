@@ -8,11 +8,11 @@
 import Foundation
 
 class Expenses: ObservableObject {
-    @Published var items = [HPItem]() {
+    @Published var patients = [Patient]() {
         didSet {
             let encoder = JSONEncoder()
             
-            if let encoded = try? JSONEncoder().encode(items) {
+            if let encoded = try? JSONEncoder().encode(patients) {
                 UserDefaults.standard.set(encoded, forKey: "Items")
             }
         }
@@ -22,15 +22,15 @@ class Expenses: ObservableObject {
         // Try to load saved data from the UserDefaults
         if let savedItems = UserDefaults.standard.data(forKey: "Items") {
             // If that key exists, then try to decode the items from the UserDefaults into HPItems
-            if let decodedItems = try? JSONDecoder().decode([HPItem].self, from: savedItems) {
-                items = decodedItems
-                if items.count < 0 {
+            if let decodedItems = try? JSONDecoder().decode([Patient].self, from: savedItems) {
+                patients = decodedItems
+                if patients.count < 0 {
                     return
                 }
             }
         }
         // If no items were found, then create new items from the JSON
-        items = Bundle.main.decode([HPItem].self, from: "HP.json")
+        patients = Bundle.main.decode([Patient].self, from: "HP.json")
         
     }
 }

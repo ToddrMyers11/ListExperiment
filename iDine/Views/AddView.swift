@@ -81,7 +81,7 @@ struct AddView: View {
             .navigationTitle("Add new expense")
             .toolbar {
                 Button("Save") {
-                    let item = HPItem(id: UUID(), name: name, Location: location, Room: Int(room), Diagnosis1: diagnosis1, Restrictions: [], Physician: "", CC: "testCC", HPI: "", MedHx: "", SurgHx: "", SocHx: "", FamHx: "", ROS: "", Allergies: "", Medications: "", Vaccinations: "", PE: "", Assess: "", Plan: "")
+                    let item = Patient(id: UUID(), name: name, Location: location, Room: Int(room), Diagnosis1: diagnosis1, Restrictions: [], Physician: "", CC: "testCC", HPI: "", MedHx: "", SurgHx: "", SocHx: "", FamHx: "", ROS: "", Allergies: "", Medications: "", Vaccinations: "", PE: "", Assess: "", Plan: "")
                     //expenses.items.append(item)
                     dismiss()
                 }

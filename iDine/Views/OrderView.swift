@@ -14,7 +14,7 @@ struct OrderView: View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(order.items) { item in
+                    ForEach(order.patients) { item in
                         HStack {
                             Text(item.name)
                             Spacer()
@@ -29,7 +29,7 @@ struct OrderView: View {
                        // CheckoutView()
                     }
                 }
-                .disabled(order.items.isEmpty)
+                .disabled(order.patients.isEmpty)
             }
             .navigationTitle("Order")
             .listStyle(.insetGrouped)
@@ -40,7 +40,7 @@ struct OrderView: View {
     }
 
     func deleteItems(at offsets: IndexSet) {
-        order.items.remove(atOffsets: offsets)
+        order.patients.remove(atOffsets: offsets)
     }
 }
 

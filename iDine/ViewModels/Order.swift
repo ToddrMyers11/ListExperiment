@@ -9,7 +9,7 @@
 import SwiftUI
 
 class Order: ObservableObject {
-    @Published var items = [HPItem]()
+    @Published var patients = [Patient]()
 
 //    var total: Int {
 //        if items.count > 0 {
@@ -19,13 +19,13 @@ class Order: ObservableObject {
 //        }
 //    }
 
-    func add(item: HPItem) {
-        items.append(item)
+    func add(item: Patient) {
+        patients.append(item)
     }
 
-    func remove(item: HPItem) {
-        if let index = items.firstIndex(of: item) {
-            items.remove(at: index)
+    func remove(item: Patient) {
+        if let index = patients.firstIndex(of: item) {
+            patients.remove(at: index)
         }
     }
 }

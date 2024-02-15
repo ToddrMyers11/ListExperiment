@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ItemDetail: View {
-    let item: HPItem
+struct PatientDetail: View {
+    let item: Patient
     // Assuming `order` is defined elsewhere if you're using the commented-out order button
 
     var body: some View {
@@ -18,14 +18,6 @@ struct ItemDetail: View {
                 item.currentImage
                     .resizable()
                     .scaledToFit()
-
-                // If you're including photo credits or similar, adjust accordingly
-                // Text("Photo: \(item.photoCredit)")
-                //     .padding(4)
-                //     .background(Color.black)
-                //     .font(.caption)
-                //     .foregroundColor(.white)
-                //     .offset(x: -5, y: -5)
             }
 
             Text(item.name)

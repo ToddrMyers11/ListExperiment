@@ -5,16 +5,16 @@
 
 import SwiftUI
 
-struct ItemRow: View {
+struct PatientRow: View {
     let colors: [String: Color] = ["D": .purple, "G": .black, "N": .red, "S": .blue, "V": .green]
     
-    let item: HPItem
+    let patient: Patient
 
     var body: some View {
         VStack {
             HStack {
                 // Use the computed property to obtain the appropriate image
-                item.currentImage
+                patient.currentImage
                     .resizable()
                     .aspectRatio(contentMode: .fit) // This will maintain the aspect ratio
                     .frame(width: 65, height: 65)
@@ -28,13 +28,13 @@ struct ItemRow: View {
 
                 
                 VStack(alignment: .leading) {
-                    Text(item.name)
+                    Text(patient.name)
                         .font(.headline)
                     HStack {
-                        Text(item.Location)
-                        Text("\(item.Room)")
+                        Text(patient.Location)
+                        Text("\(patient.Room)")
                     }
-                    Text(item.Diagnosis1)
+                    Text(patient.Diagnosis1)
                 }
             }
         }
@@ -42,7 +42,7 @@ struct ItemRow: View {
         Spacer()
         
         // Displaying restrictions if any
-        ForEach(item.Restrictions, id: \.self) { restriction in
+        ForEach(patient.Restrictions, id: \.self) { restriction in
             Text(restriction)
                 .font(.caption)
                 .fontWeight(.black)
