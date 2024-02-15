@@ -7,15 +7,20 @@
 import SwiftUI
 
 struct ItemDetail: View {
-    @EnvironmentObject var order: Order
-    let item: HPItem
+    let item: PatientDataModel
 
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {
-                Image(item.mainImage)
-                    .resizable()
-                    .scaledToFit()
+                if let patientImage = item.patientImage, let uiImage = UIImage(data: patientImage){
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .frame(width: 65, height: 65, alignment: .center)
+                        .scaledToFill()
+                        .clipped()
+                        .clipShape(Rectangle())
+                        .overlay(Rectangle().stroke(Color.gray, lineWidth: 2))
+                }
 
 //                Text("Photo: \(item.photoCredit)")
 //                    .padding(4)
@@ -27,7 +32,14 @@ struct ItemDetail: View {
 
             Text(item.name)
                 .padding()
-
+            VStack(alignment: .leading){
+                Text("Medication:")
+                List{
+                    ForEach(item.Medications ?? [], id: \.self){ medication in
+                        Text(medication)
+                    }
+                }
+            }
 
             Spacer()
         }

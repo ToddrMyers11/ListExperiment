@@ -19,13 +19,23 @@
 		513D22D025D16D9F00C1A803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513D22CF25D16D9F00C1A803 /* Assets.xcassets */; };
 		513D22D325D16D9F00C1A803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513D22D225D16D9F00C1A803 /* Preview Assets.xcassets */; };
 		513D22DC25D16DC000C1A803 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22DB25D16DC000C1A803 /* Helper.swift */; };
-		513D22E025D16DD900C1A803 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22DE25D16DD900C1A803 /* Order.swift */; };
 		513D22E125D16DD900C1A803 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22DF25D16DD900C1A803 /* Menu.swift */; };
 		513D22E725D1729200C1A803 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22E625D1729200C1A803 /* ItemRow.swift */; };
 		513D22EA25D17C4C00C1A803 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22E925D17C4C00C1A803 /* ItemDetail.swift */; };
-		513D22ED25D1870E00C1A803 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EC25D1870E00C1A803 /* OrderView.swift */; };
 		513D22F025D1880700C1A803 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22EF25D1880700C1A803 /* MainView.swift */; };
 		513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22F225D1B03500C1A803 /* CheckoutView.swift */; };
+		FA325C332B7D0D820081543D /* UserCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA325C322B7D0D820081543D /* UserCredential.swift */; };
+		FA325C362B7D0E150081543D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA325C352B7D0E150081543D /* AppConfig.swift */; };
+		FAA372232B74F972000EF639 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA372222B74F972000EF639 /* DataModel.swift */; };
+		FAA372252B74FB59000EF639 /* DischargedPatientDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA372242B74FB59000EF639 /* DischargedPatientDataModel.swift */; };
+		FAB4153C2B7A26AC001219D1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4153B2B7A26AC001219D1 /* Enums.swift */; };
+		FAB69C7D2B73B2F700D1606C /* PatientDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB69C7C2B73B2F700D1606C /* PatientDataModel.swift */; };
+		FAB69C7F2B73B6E000D1606C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB69C7E2B73B6E000D1606C /* Extensions.swift */; };
+		FAD2893B2B78E87600BCCE20 /* LoggedInPatientDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2893A2B78E87600BCCE20 /* LoggedInPatientDataModel.swift */; };
+		FAF83CDF2B7CC41D00651D2B /* DischargedPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83CDE2B7CC41D00651D2B /* DischargedPatientView.swift */; };
+		FAF83CE12B7CF38700651D2B /* MedicationApiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83CE02B7CF38700651D2B /* MedicationApiViewModel.swift */; };
+		FAF83CE32B7CF3DB00651D2B /* DrugModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83CE22B7CF3DB00651D2B /* DrugModel.swift */; };
+		FAF83CE52B7CF4BF00651D2B /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF83CE42B7CF4BF00651D2B /* AddMedicationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +53,23 @@
 		513D22D225D16D9F00C1A803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		513D22D425D16D9F00C1A803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513D22DB25D16DC000C1A803 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		513D22DE25D16DD900C1A803 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		513D22DF25D16DD900C1A803 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		513D22E625D1729200C1A803 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		513D22E925D17C4C00C1A803 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
-		513D22EC25D1870E00C1A803 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		513D22EF25D1880700C1A803 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		513D22F225D1B03500C1A803 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		FA325C322B7D0D820081543D /* UserCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredential.swift; sourceTree = "<group>"; };
+		FA325C352B7D0E150081543D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		FAA372222B74F972000EF639 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		FAA372242B74FB59000EF639 /* DischargedPatientDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DischargedPatientDataModel.swift; sourceTree = "<group>"; };
+		FAB4153B2B7A26AC001219D1 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		FAB69C7C2B73B2F700D1606C /* PatientDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDataModel.swift; sourceTree = "<group>"; };
+		FAB69C7E2B73B6E000D1606C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FAD2893A2B78E87600BCCE20 /* LoggedInPatientDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInPatientDataModel.swift; sourceTree = "<group>"; };
+		FAF83CDE2B7CC41D00651D2B /* DischargedPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DischargedPatientView.swift; sourceTree = "<group>"; };
+		FAF83CE02B7CF38700651D2B /* MedicationApiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationApiViewModel.swift; sourceTree = "<group>"; };
+		FAF83CE22B7CF3DB00651D2B /* DrugModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugModel.swift; sourceTree = "<group>"; };
+		FAF83CE42B7CF4BF00651D2B /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,23 +102,14 @@
 		513D22CA25D16D9E00C1A803 /* iDine */ = {
 			isa = PBXGroup;
 			children = (
-				513D22CB25D16D9E00C1A803 /* iDineApp.swift */,
-				513D22CD25D16D9E00C1A803 /* ContentView.swift */,
-				513D22E925D17C4C00C1A803 /* ItemDetail.swift */,
-				513D22EC25D1870E00C1A803 /* OrderView.swift */,
-				513D22F225D1B03500C1A803 /* CheckoutView.swift */,
-				513D22EF25D1880700C1A803 /* MainView.swift */,
-				513D22E625D1729200C1A803 /* ItemRow.swift */,
-				513D22DB25D16DC000C1A803 /* Helper.swift */,
-				513D22DF25D16DD900C1A803 /* Menu.swift */,
-				3451D3932B3470020055A523 /* HPModel.swift */,
-				3451D3982B349C8A0055A523 /* HPViewModel.swift */,
-				513D22DE25D16DD900C1A803 /* Order.swift */,
-				3451D3922B33DAC10055A523 /* HP.json */,
-				342843692B3DA3AC0032BA67 /* AddView.swift */,
-				34D79CFE2B609C7800205580 /* MoreView.swift */,
-				3477EEC02B45E7A900FE8B14 /* AlertView.swift */,
-				3428436B2B3E041E0032BA67 /* encodeDecode.swift */,
+				FA325C342B7D0E080081543D /* Config */,
+				FAB69C752B73A66500D1606C /* AppFlow */,
+				FAB69C782B73A72400D1606C /* Class */,
+				FAB69C7B2B73A74400D1606C /* Data */,
+				FAB69C772B73A6DF00D1606C /* Helper */,
+				FAB69C742B73A65800D1606C /* View */,
+				FAB69C7A2B73A73800D1606C /* ViewModel */,
+				FAB69C792B73A72E00D1606C /* Model */,
 				513D22CF25D16D9F00C1A803 /* Assets.xcassets */,
 				513D22D425D16D9F00C1A803 /* Info.plist */,
 				513D22D125D16D9F00C1A803 /* Preview Content */,
@@ -112,6 +123,97 @@
 				513D22D225D16D9F00C1A803 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA325C342B7D0E080081543D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				FA325C352B7D0E150081543D /* AppConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		FAB69C742B73A65800D1606C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAB69C762B73A69600D1606C /* SubView */,
+				513D22EF25D1880700C1A803 /* MainView.swift */,
+				513D22CD25D16D9E00C1A803 /* ContentView.swift */,
+				FAF83CDE2B7CC41D00651D2B /* DischargedPatientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAB69C752B73A66500D1606C /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				513D22CB25D16D9E00C1A803 /* iDineApp.swift */,
+			);
+			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		FAB69C762B73A69600D1606C /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				513D22E925D17C4C00C1A803 /* ItemDetail.swift */,
+				34D79CFE2B609C7800205580 /* MoreView.swift */,
+				342843692B3DA3AC0032BA67 /* AddView.swift */,
+				513D22E625D1729200C1A803 /* ItemRow.swift */,
+				513D22F225D1B03500C1A803 /* CheckoutView.swift */,
+				513D22DF25D16DD900C1A803 /* Menu.swift */,
+				3477EEC02B45E7A900FE8B14 /* AlertView.swift */,
+				FAF83CE42B7CF4BF00651D2B /* AddMedicationView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		FAB69C772B73A6DF00D1606C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				513D22DB25D16DC000C1A803 /* Helper.swift */,
+				3428436B2B3E041E0032BA67 /* encodeDecode.swift */,
+				FAB69C7E2B73B6E000D1606C /* Extensions.swift */,
+				FAB4153B2B7A26AC001219D1 /* Enums.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FAB69C782B73A72400D1606C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		FAB69C792B73A72E00D1606C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3451D3932B3470020055A523 /* HPModel.swift */,
+				FAB69C7C2B73B2F700D1606C /* PatientDataModel.swift */,
+				FAA372222B74F972000EF639 /* DataModel.swift */,
+				FAA372242B74FB59000EF639 /* DischargedPatientDataModel.swift */,
+				FAD2893A2B78E87600BCCE20 /* LoggedInPatientDataModel.swift */,
+				FAF83CE22B7CF3DB00651D2B /* DrugModel.swift */,
+				FA325C322B7D0D820081543D /* UserCredential.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAB69C7A2B73A73800D1606C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3451D3982B349C8A0055A523 /* HPViewModel.swift */,
+				FAF83CE02B7CF38700651D2B /* MedicationApiViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAB69C7B2B73A74400D1606C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3451D3922B33DAC10055A523 /* HP.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,19 +287,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				513D22EA25D17C4C00C1A803 /* ItemDetail.swift in Sources */,
+				FAF83CE32B7CF3DB00651D2B /* DrugModel.swift in Sources */,
+				FAF83CE52B7CF4BF00651D2B /* AddMedicationView.swift in Sources */,
+				FAB69C7F2B73B6E000D1606C /* Extensions.swift in Sources */,
+				FAA372252B74FB59000EF639 /* DischargedPatientDataModel.swift in Sources */,
+				FAD2893B2B78E87600BCCE20 /* LoggedInPatientDataModel.swift in Sources */,
+				FAF83CDF2B7CC41D00651D2B /* DischargedPatientView.swift in Sources */,
+				FA325C362B7D0E150081543D /* AppConfig.swift in Sources */,
 				513D22F025D1880700C1A803 /* MainView.swift in Sources */,
 				513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */,
-				513D22ED25D1870E00C1A803 /* OrderView.swift in Sources */,
 				3451D3992B349C8A0055A523 /* HPViewModel.swift in Sources */,
+				FAB4153C2B7A26AC001219D1 /* Enums.swift in Sources */,
+				FA325C332B7D0D820081543D /* UserCredential.swift in Sources */,
 				3451D3942B3470020055A523 /* HPModel.swift in Sources */,
 				513D22CE25D16D9E00C1A803 /* ContentView.swift in Sources */,
 				34D79CFF2B609C7800205580 /* MoreView.swift in Sources */,
+				FAF83CE12B7CF38700651D2B /* MedicationApiViewModel.swift in Sources */,
 				513D22CC25D16D9E00C1A803 /* iDineApp.swift in Sources */,
-				513D22E025D16DD900C1A803 /* Order.swift in Sources */,
 				513D22E725D1729200C1A803 /* ItemRow.swift in Sources */,
 				513D22DC25D16DC000C1A803 /* Helper.swift in Sources */,
 				513D22E125D16DD900C1A803 /* Menu.swift in Sources */,
+				FAA372232B74F972000EF639 /* DataModel.swift in Sources */,
 				3477EEC12B45E7A900FE8B14 /* AlertView.swift in Sources */,
+				FAB69C7D2B73B2F700D1606C /* PatientDataModel.swift in Sources */,
 				3428436A2B3DA3AC0032BA67 /* AddView.swift in Sources */,
 				3428436C2B3E041E0032BA67 /* encodeDecode.swift in Sources */,
 			);
@@ -257,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -312,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +444,7 @@
 				DEVELOPMENT_TEAM = B5C26XE59E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iDine/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +466,7 @@
 				DEVELOPMENT_TEAM = B5C26XE59E;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iDine/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

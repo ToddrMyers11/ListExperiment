@@ -18,7 +18,7 @@ struct MainView: View {
                         
                 }
 
-            OrderView()
+            Text("Notes")
                 .tabItem {
                     Label("Notes", systemImage: "square.and.pencil")
                 }
@@ -29,6 +29,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(Order())
+//            .environmentObject(Order())
     }
 }

@@ -10,8 +10,6 @@ import SwiftUI
 struct MoreView: View {
    // @ObservedObject var expenses: Expenses
     @Environment(\.dismiss) var dismiss
-    
-    let info: HPItem
     @State private var location = ""
     @State private var room = 0
     @State private var diagnosis1 = ""
@@ -46,7 +44,7 @@ struct MoreView: View {
         //        }
         //    }
         //}
-        Text(info.name)
+//        Text(info.name)
         NavigationView {
             List {
                 NavigationLink {
@@ -71,7 +69,7 @@ struct MoreView: View {
                 }
             }
             .listStyle(.grouped)
-            .navigationTitle(info.name)
+//            .navigationTitle(info.name)
             .navigationBarTitleDisplayMode(.inline)
             .font(.custom("Helvitica", size: 19))
         }
