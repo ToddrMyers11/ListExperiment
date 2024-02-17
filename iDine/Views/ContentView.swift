@@ -81,7 +81,7 @@ struct ContentView: View {
                 }
             }
             .navigationDestination(for: Patient.self) { item in
-                PatientDetail(item: item)
+                PatientDetail(patient: item)
             }
             .navigationTitle("Patient")
             .toolbar {
