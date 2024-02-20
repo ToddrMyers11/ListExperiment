@@ -1,25 +1,25 @@
 //
-//  AddMedicationView.swift
+//  EditMedicationView.swift
 //  PatientList
 //
-//  Created by Sazza on 14/2/24.
+//  Created by Sazza on 20/2/24.
 //
 
 import SwiftUI
 
-struct AddMedicationView: View {
+struct EditMedicationView: View {
     @EnvironmentObject var vm: MedicationApiViewModel
     @State private var isSearching = false
     @FocusState var isTextFieldFocused: Bool
-    @Binding var patientData:PatientDataModel
+    @Bindable var patientData:PatientDataModel
     var body: some View {
         VStack{
             SearchBar(vm: vm, isSearching: $isSearching,isTextFieldFocused: _isTextFieldFocused)
             if isSearching {
-                SearchResultsView(vm: vm, isSearching: $isSearching, isTextFieldFocused: _isTextFieldFocused, patientData: $patientData)
+                EditSearchResultsView(vm: vm, isSearching: $isSearching, isTextFieldFocused: _isTextFieldFocused, patientData: patientData)
             }
             else {
-                MedicationList(patientData: $patientData)
+                EditMedicationList(patientData: patientData)
             }
         }
         .navigationTitle("Search Drug")
@@ -27,59 +27,15 @@ struct AddMedicationView: View {
 }
 
 #Preview {
-    AddMedicationView( patientData: .constant(PatientDataModel(name: "Todd")))
+    EditMedicationView( patientData: PatientDataModel(name: ""))
 }
 
 
-struct SearchBar: View {
-    @ObservedObject var vm: MedicationApiViewModel
-    @Binding var isSearching: Bool
-    @State var filter: String = ""
-    @FocusState var isTextFieldFocused: Bool
-    var body: some View {
-        HStack {
-            TextField("Search Drug Here", text: $filter)
-                .focused($isTextFieldFocused)
-                .onChange(of: isTextFieldFocused) { isFocused in
-                    if isFocused {
-                        // began editing...
-                        isSearching = true
-                    } else {
-                        // ended editing...
-                        isSearching = false
-                    }
-                }
-                .onSubmit {
-                    vm.fetchData(filter: filter)
-                }
-                .onChange(of: filter) { newValue in
-                    vm.fetchData(filter: filter)
-                }
-            Button(action: {
-                vm.fetchData(filter: filter)
-            }, label: {
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                }
-            })
-            if isTextFieldFocused{
-                Button {
-                    isTextFieldFocused = false
-                } label: {
-                    Image(systemName: "xmark")
-                }
-                
-            }
-        }
-        .padding()
-    }
-}
-
-struct SearchResultsView: View {
+struct EditSearchResultsView: View {
     @ObservedObject var vm: MedicationApiViewModel
     @Binding var isSearching: Bool
     @FocusState var isTextFieldFocused: Bool
-    @Binding var patientData: PatientDataModel
+    @Bindable var patientData: PatientDataModel
     var body: some View {
         VStack{
             ScrollView {
@@ -123,8 +79,8 @@ struct SearchResultsView: View {
     }
 }
 
-struct MedicationList: View {
-    @Binding var patientData: PatientDataModel
+struct EditMedicationList: View {
+    @Bindable var patientData: PatientDataModel
     var body: some View {
         VStack{
             Text("List Of Drugs")

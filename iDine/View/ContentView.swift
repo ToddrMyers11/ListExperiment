@@ -108,7 +108,7 @@ struct ContentView: View {
                     Text("Patients")
                 } footer: {
                     HStack{
-                        Text("\(patientData.count) patients")
+                        Text("\(patientData.count + pinnedPatients.count) patients")
                         Spacer()
                         Text("Discharged: \(dischargedPatientData.count) patients")
                     }

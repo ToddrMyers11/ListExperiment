@@ -72,7 +72,7 @@ struct AddView: View {
                     
                     TextField("Diagnoses", text: $patientData.Diagnosis1.toUnwrapped(defaultValue: ""))
                     
-                    DisclosureGroup("Select Analysis", isExpanded: $isExpanded) {
+                    DisclosureGroup("Select Restrictions", isExpanded: $isExpanded) {
                         VStack(alignment: .leading) {
                             ForEach(RestrictionTypes.allCases, id: \.id) { type in
                                     buttonForRestriction(type: type)
@@ -120,7 +120,7 @@ struct AddView: View {
         }
     }
     
-    private func toggleAnalysis(_ type: RestrictionTypes) {
+    private func toggleRestrictions(_ type: RestrictionTypes) {
         if var restrictions = patientData.Restrictions {
             if let index = restrictions.firstIndex(of: type.rawValue) {
                 restrictions.remove(at: index)
@@ -136,7 +136,7 @@ struct AddView: View {
     private func buttonForRestriction(type: RestrictionTypes) -> some View{
         Button(action: {
             print("Button Pressed for \(type.rawValue)")
-            toggleAnalysis(type)
+            toggleRestrictions(type)
             print("\(patientData.Restrictions)")
         }) {
             Text(type.rawValue)

@@ -40,11 +40,9 @@ struct DischargedPatientView: View {
                 }
                 .onDelete(perform: deleteDestinations)
             }
-            
-        header: {
-            Text("Discharged Patient")
-            }
         }
+        .navigationTitle("Discharged Patients")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(for: DischargedPatientDataModel.self) { item in
             ItemDetail(item: item.patient)
         }

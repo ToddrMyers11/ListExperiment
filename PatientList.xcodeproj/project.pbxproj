@@ -28,6 +28,8 @@
 		FA325C362B7D0E150081543D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA325C352B7D0E150081543D /* AppConfig.swift */; };
 		FAA372232B74F972000EF639 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA372222B74F972000EF639 /* DataModel.swift */; };
 		FAA372252B74FB59000EF639 /* DischargedPatientDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA372242B74FB59000EF639 /* DischargedPatientDataModel.swift */; };
+		FAA6DF3E2B84B1B2002EEFC6 /* EditPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6DF3D2B84B1B2002EEFC6 /* EditPatientView.swift */; };
+		FAA6DF402B84B75B002EEFC6 /* EditMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6DF3F2B84B75B002EEFC6 /* EditMedicationView.swift */; };
 		FAB4153C2B7A26AC001219D1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4153B2B7A26AC001219D1 /* Enums.swift */; };
 		FAB69C7D2B73B2F700D1606C /* PatientDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB69C7C2B73B2F700D1606C /* PatientDataModel.swift */; };
 		FAB69C7F2B73B6E000D1606C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB69C7E2B73B6E000D1606C /* Extensions.swift */; };
@@ -62,6 +64,8 @@
 		FA325C352B7D0E150081543D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		FAA372222B74F972000EF639 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		FAA372242B74FB59000EF639 /* DischargedPatientDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DischargedPatientDataModel.swift; sourceTree = "<group>"; };
+		FAA6DF3D2B84B1B2002EEFC6 /* EditPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPatientView.swift; sourceTree = "<group>"; };
+		FAA6DF3F2B84B75B002EEFC6 /* EditMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationView.swift; sourceTree = "<group>"; };
 		FAB4153B2B7A26AC001219D1 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		FAB69C7C2B73B2F700D1606C /* PatientDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDataModel.swift; sourceTree = "<group>"; };
 		FAB69C7E2B73B6E000D1606C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				513D22DF25D16DD900C1A803 /* Menu.swift */,
 				3477EEC02B45E7A900FE8B14 /* AlertView.swift */,
 				FAF83CE42B7CF4BF00651D2B /* AddMedicationView.swift */,
+				FAA6DF3D2B84B1B2002EEFC6 /* EditPatientView.swift */,
+				FAA6DF3F2B84B75B002EEFC6 /* EditMedicationView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 				FAD2893B2B78E87600BCCE20 /* LoggedInPatientDataModel.swift in Sources */,
 				FAF83CDF2B7CC41D00651D2B /* DischargedPatientView.swift in Sources */,
 				FA325C362B7D0E150081543D /* AppConfig.swift in Sources */,
+				FAA6DF3E2B84B1B2002EEFC6 /* EditPatientView.swift in Sources */,
+				FAA6DF402B84B75B002EEFC6 /* EditMedicationView.swift in Sources */,
 				513D22F025D1880700C1A803 /* MainView.swift in Sources */,
 				513D22F325D1B03500C1A803 /* CheckoutView.swift in Sources */,
 				3451D3992B349C8A0055A523 /* HPViewModel.swift in Sources */,
