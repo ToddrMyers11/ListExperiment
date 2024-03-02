@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var name = "Enter Name"
     @State private var addPatientToggle = false
     @State private var deleteIndexSet: IndexSet?
+    @State private var searchText = ""
     
     @Query(FetchDescriptor(predicate: #Predicate <LoggedInPatientDataModel>{ $0.isPinned == false })) private var patientData: [LoggedInPatientDataModel]
     @Query(FetchDescriptor(predicate: #Predicate <LoggedInPatientDataModel>{ $0.isPinned == true })) private var pinnedPatients: [LoggedInPatientDataModel]
@@ -25,7 +26,7 @@ struct ContentView: View {
             List {
                 if !dischargedPatientData.isEmpty{
                     NavigationLink(value: dischargedPatientData) {
-                        Text("Discharged Patient")
+                        Text("Discharged Patients")
                     }
                 }
                 if !pinnedPatients.isEmpty{
@@ -120,7 +121,7 @@ struct ContentView: View {
             .navigationDestination(for: [DischargedPatientDataModel].self) { item in
                 DischargedPatientView()
             }
-            .navigationTitle("Patient")
+            .navigationTitle("Patients")
             .toolbar {
                 Button {
                     showingAddPatient = true
