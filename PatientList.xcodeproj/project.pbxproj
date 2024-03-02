@@ -90,7 +90,7 @@
 		513D22BF25D16D9E00C1A803 = {
 			isa = PBXGroup;
 			children = (
-				513D22CA25D16D9E00C1A803 /* iDine */,
+				513D22CA25D16D9E00C1A803 /* SourceCode */,
 				513D22C925D16D9E00C1A803 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,7 +103,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		513D22CA25D16D9E00C1A803 /* iDine */ = {
+		513D22CA25D16D9E00C1A803 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
 				FA325C342B7D0E080081543D /* Config */,
@@ -118,7 +118,7 @@
 				513D22D425D16D9F00C1A803 /* Info.plist */,
 				513D22D125D16D9F00C1A803 /* Preview Content */,
 			);
-			path = iDine;
+			path = SourceCode;
 			sourceTree = "<group>";
 		};
 		513D22D125D16D9F00C1A803 /* Preview Content */ = {
