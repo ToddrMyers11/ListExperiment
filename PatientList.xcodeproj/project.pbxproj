@@ -14,7 +14,7 @@
 		3451D3992B349C8A0055A523 /* HPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451D3982B349C8A0055A523 /* HPViewModel.swift */; };
 		3477EEC12B45E7A900FE8B14 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477EEC02B45E7A900FE8B14 /* AlertView.swift */; };
 		34D79CFF2B609C7800205580 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D79CFE2B609C7800205580 /* MoreView.swift */; };
-		513D22CC25D16D9E00C1A803 /* iDineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22CB25D16D9E00C1A803 /* iDineApp.swift */; };
+		513D22CC25D16D9E00C1A803 /* MediList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22CB25D16D9E00C1A803 /* MediList.swift */; };
 		513D22CE25D16D9E00C1A803 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D22CD25D16D9E00C1A803 /* ContentView.swift */; };
 		513D22D025D16D9F00C1A803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513D22CF25D16D9F00C1A803 /* Assets.xcassets */; };
 		513D22D325D16D9F00C1A803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513D22D225D16D9F00C1A803 /* Preview Assets.xcassets */; };
@@ -49,7 +49,7 @@
 		3477EEC02B45E7A900FE8B14 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		34D79CFE2B609C7800205580 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		513D22C825D16D9E00C1A803 /* PatientList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatientList.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		513D22CB25D16D9E00C1A803 /* iDineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDineApp.swift; sourceTree = "<group>"; };
+		513D22CB25D16D9E00C1A803 /* MediList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediList.swift; sourceTree = "<group>"; };
 		513D22CD25D16D9E00C1A803 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		513D22CF25D16D9F00C1A803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		513D22D225D16D9F00C1A803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		FAB69C752B73A66500D1606C /* AppFlow */ = {
 			isa = PBXGroup;
 			children = (
-				513D22CB25D16D9E00C1A803 /* iDineApp.swift */,
+				513D22CB25D16D9E00C1A803 /* MediList.swift */,
 			);
 			path = AppFlow;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 				513D22CE25D16D9E00C1A803 /* ContentView.swift in Sources */,
 				34D79CFF2B609C7800205580 /* MoreView.swift in Sources */,
 				FAF83CE12B7CF38700651D2B /* MedicationApiViewModel.swift in Sources */,
-				513D22CC25D16D9E00C1A803 /* iDineApp.swift in Sources */,
+				513D22CC25D16D9E00C1A803 /* MediList.swift in Sources */,
 				513D22E725D1729200C1A803 /* ItemRow.swift in Sources */,
 				513D22DC25D16DC000C1A803 /* Helper.swift in Sources */,
 				513D22E125D16DD900C1A803 /* Menu.swift in Sources */,
@@ -462,7 +462,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.iDine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyersMedical.MediList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.iDine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyersMedical.MediList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

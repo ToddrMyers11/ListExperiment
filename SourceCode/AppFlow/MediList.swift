@@ -8,7 +8,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct iDineApp: App {
+struct MediList: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
