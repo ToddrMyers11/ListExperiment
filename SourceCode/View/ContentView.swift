@@ -18,20 +18,59 @@ struct ContentView: View {
     @Query(FetchDescriptor(predicate: #Predicate <LoggedInPatientDataModel>{ $0.isPinned == false })) private var patientData: [LoggedInPatientDataModel]
     @Query(FetchDescriptor(predicate: #Predicate <LoggedInPatientDataModel>{ $0.isPinned == true })) private var pinnedPatients: [LoggedInPatientDataModel]
     @Query private var dischargedPatientData: [DischargedPatientDataModel]
+    @Query private var loggedPatientData: [LoggedInPatientDataModel]
     
     var body: some View {
         
         NavigationStack {
             
             List {
-                if !dischargedPatientData.isEmpty{
-                    NavigationLink(value: dischargedPatientData) {
-                        Text("Discharged Patients")
+                if searchText.isEmpty{
+                    if !dischargedPatientData.isEmpty{
+                        NavigationLink(value: dischargedPatientData) {
+                            Text("Discharged Patients")
+                        }
                     }
-                }
-                if !pinnedPatients.isEmpty{
+                    if !pinnedPatients.isEmpty{
+                        Section{
+                            ForEach(pinnedPatients, id: \.id) { item in
+                                NavigationLink(value: item) {
+                                    ItemRow(item: item.patient)
+                                }
+                                .swipeActions(allowsFullSwipe: false) {
+                                    // MARK: Discharge Button
+                                    Button(role: .cancel) {
+                                        dischargePatient(item: item)
+                                    } label: {
+                                        Label("Discharge", systemImage: "accessibility.badge.arrow.up.right")
+                                    }.imageScale(.small)
+                                        .tint(.indigo)
+                                    
+                                    // MARK: More Button
+                                    Button {
+                                        print("More")
+                                        showingMoreSheet = true
+                                        
+                                    } label: {
+                                        Label("More", systemImage: "ellipsis")
+                                    }
+                                }
+                                .swipeActions(edge: .leading) {
+                                    Button {
+                                        item.isPinned = false
+                                    } label: {
+                                        Label("UnPin", systemImage: "pin.slash.fill")
+                                    }
+                                    .tint(.indigo)
+                                }
+                            }
+                        }
+                    header: {
+                        Text("Pinned Patients")
+                    }
+                    }
                     Section{
-                        ForEach(pinnedPatients, id: \.id) { item in
+                        ForEach(patientData, id: \.id) { item in
                             NavigationLink(value: item) {
                                 ItemRow(item: item.patient)
                             }
@@ -55,73 +94,71 @@ struct ContentView: View {
                             }
                             .swipeActions(edge: .leading) {
                                 Button {
-                                    item.isPinned = false
+                                    item.isPinned = true
                                 } label: {
-                                    Label("UnPin", systemImage: "pin.slash.fill")
+                                    Label("Pin", systemImage: "pin.fill")
+                                }
+                                .tint(.indigo)
+                            }
+                        }
+                        .onMove(perform: onMove)
+                        
+                        .sheet(isPresented: $showingMoreSheet) {
+                            Text("More")
+                                .presentationDetents([.fraction(0.50)])
+                        }
+                    }header: {
+                        Text("Patients")
+                    } footer: {
+                        HStack{
+                            Text("\(patientData.count + pinnedPatients.count) patients")
+                            Spacer()
+                            Text("Discharged: \(dischargedPatientData.count) patients")
+                        }
+                    }
+                } else {
+                    Section{
+                        ForEach(searchResults, id: \.id) { item in
+                            NavigationLink(value: item) {
+                                ItemRow(item: item.patient)
+                            }
+                            .swipeActions(allowsFullSwipe: false) {
+                                // MARK: Discharge Button
+                                Button(role: .cancel) {
+                                    dischargePatient(item: item)
+                                } label: {
+                                    Label("Discharge", systemImage: "accessibility.badge.arrow.up.right")
+                                }.imageScale(.small)
+                                    .tint(.indigo)
+                                
+                                // MARK: More Button
+                                Button {
+                                    print("More")
+                                    showingMoreSheet = true
+                                    
+                                } label: {
+                                    Label("More", systemImage: "ellipsis")
+                                }
+                            }
+                            .swipeActions(edge: .leading) {
+                                Button {
+                                    item.isPinned = true
+                                } label: {
+                                    Label("Pin", systemImage: "pin.fill")
                                 }
                                 .tint(.indigo)
                             }
                         }
                     }
-                header: {
-                    Text("Pinned Patients")
-                }
-                }
-                Section{
-                    ForEach(patientData, id: \.id) { item in
-                        NavigationLink(value: item) {
-                            ItemRow(item: item.patient)
-                        }
-                        .swipeActions(allowsFullSwipe: false) {
-                            // MARK: Discharge Button
-                            Button(role: .cancel) {
-                                dischargePatient(item: item)
-                            } label: {
-                                Label("Discharge", systemImage: "accessibility.badge.arrow.up.right")
-                            }.imageScale(.small)
-                                .tint(.indigo)
-                            
-                            // MARK: More Button
-                            Button {
-                                print("More")
-                                showingMoreSheet = true
-                                
-                            } label: {
-                                Label("More", systemImage: "ellipsis")
-                            }
-                        }
-                        .swipeActions(edge: .leading) {
-                            Button {
-                                item.isPinned = true
-                            } label: {
-                                Label("Pin", systemImage: "pin.fill")
-                            }
-                            .tint(.indigo)
-                        }
-                    }
-                    .onMove(perform: onMove)
-                    
-                    .sheet(isPresented: $showingMoreSheet) {
-                        Text("More")
-                            .presentationDetents([.fraction(0.50)])
-                    }
-                }header: {
-                    Text("Patients")
-                } footer: {
-                    HStack{
-                        Text("\(patientData.count + pinnedPatients.count) patients")
-                        Spacer()
-                        Text("Discharged: \(dischargedPatientData.count) patients")
-                    }
                 }
             }
+            .searchable(text: $searchText)
             .navigationDestination(for: LoggedInPatientDataModel.self) { item in
                 ItemDetail(item: item.patient)
             }
             .navigationDestination(for: [DischargedPatientDataModel].self) { item in
                 DischargedPatientView()
             }
-            .navigationTitle("Patients")
             .toolbar {
                 Button {
                     showingAddPatient = true
@@ -156,7 +193,13 @@ struct ContentView: View {
             modelContext.delete(student)
         }
     }
-    
+    var searchResults: [LoggedInPatientDataModel] {
+        if searchText.isEmpty {
+            return []
+        } else {
+            return loggedPatientData.filter { $0.patient.name.contains(searchText) }
+        }
+    }
 }
 
 
