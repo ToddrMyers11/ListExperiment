@@ -19,15 +19,22 @@ struct DischargedPatientView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var selectedPatientForDelete: DischargedPatientDataModel?
-
+    @State private var searchText = ""
+    var searchResults: [DischargedPatientDataModel] {
+        if searchText.isEmpty {
+            return dischargedPatientData
+        } else {
+            return dischargedPatientData.filter { $0.patient.name.contains(searchText) }
+        }
+    }
     var body: some View {
-        List{
-            Section{
-                ForEach(dischargedPatientData, id: \.id) { item in
+        Section{
+            List{
+                ForEach(searchResults, id: \.id) { item in
                     NavigationLink(value: item) {
                         ItemRow(item: item.patient)
                     }
-
+                    
                     .swipeActions(edge: .leading) {
                         Button {
                             reEntry(item)
@@ -40,7 +47,10 @@ struct DischargedPatientView: View {
                 }
                 .onDelete(perform: deleteDestinations)
             }
+            .listStyle(.grouped)
+            
         }
+        .searchable(text: $searchText,placement: .navigationBarDrawer(displayMode: .automatic))
         .navigationTitle("Discharged Patients")
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(for: DischargedPatientDataModel.self) { item in
@@ -75,7 +85,6 @@ struct DischargedPatientView: View {
         } message: {
             Text("User name or password doesn't match")
         }
-
     }
     
     func deleteDestinations(_ indexSet: IndexSet) {
