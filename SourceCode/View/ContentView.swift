@@ -14,6 +14,8 @@ struct ContentView: View {
     @State private var addPatientToggle = false
     @State private var deleteIndexSet: IndexSet?
     @State private var searchText = ""
+    @State private var showDischargeAlert = false
+    @State private var dischargableItem: LoggedInPatientDataModel = LoggedInPatientDataModel(patient: PatientDataModel(name: ""))
     
     @Query(FetchDescriptor(predicate: #Predicate <LoggedInPatientDataModel>{ $0.isPinned == false })) private var patientData: [LoggedInPatientDataModel]
     @Query(FetchDescriptor(predicate: #Predicate <LoggedInPatientDataModel>{ $0.isPinned == true })) private var pinnedPatients: [LoggedInPatientDataModel]
@@ -40,11 +42,14 @@ struct ContentView: View {
                                 .swipeActions(allowsFullSwipe: false) {
                                     // MARK: Discharge Button
                                     Button(role: .cancel) {
-                                        dischargePatient(item: item)
+//                                        dischargePatient(item: item)
+                                        dischargableItem = item
+                                        showDischargeAlert = true
                                     } label: {
                                         Label("Discharge", systemImage: "accessibility.badge.arrow.up.right")
                                     }.imageScale(.small)
                                         .tint(.indigo)
+                                        
                                     
                                     // MARK: More Button
                                     Button {
@@ -77,7 +82,9 @@ struct ContentView: View {
                             .swipeActions(allowsFullSwipe: false) {
                                 // MARK: Discharge Button
                                 Button(role: .cancel) {
-                                    dischargePatient(item: item)
+//                                    dischargePatient(item: item)
+                                    dischargableItem = item
+                                    showDischargeAlert = true
                                 } label: {
                                     Label("Discharge", systemImage: "accessibility.badge.arrow.up.right")
                                 }.imageScale(.small)
@@ -171,6 +178,13 @@ struct ContentView: View {
             }
             .navigationBarTitle("Resident", displayMode: .inline)
             .listStyle(.grouped)
+            
+            .alert("Do you want to discharge this patient?", isPresented: $showDischargeAlert) {
+                Button("Yes", action: { dischargePatient(item: dischargableItem)})
+                Button("Cancel", role: .cancel, action: {})
+            } message: {
+                Text("Their information can be accessed or they can be readmitted in the discharged patients list.")
+            }
         }
         
     }

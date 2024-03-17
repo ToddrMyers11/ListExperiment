@@ -19,7 +19,9 @@ struct DischargedPatientView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var selectedPatientForDelete: DischargedPatientDataModel?
+    @State private var reEntryItem: DischargedPatientDataModel = DischargedPatientDataModel(patient: PatientDataModel(name: ""))
     @State private var searchText = ""
+    @State private var showReEntryAlert = false
     var searchResults: [DischargedPatientDataModel] {
         if searchText.isEmpty {
             return dischargedPatientData
@@ -37,7 +39,9 @@ struct DischargedPatientView: View {
                     
                     .swipeActions(edge: .leading) {
                         Button {
-                            reEntry(item)
+//                            reEntry(item)
+                            reEntryItem = item
+                            showReEntryAlert = true
                         } label: {
                             Label("ReEntry", systemImage: "arrowshape.turn.up.backward.2.circle")
                         }
@@ -54,7 +58,7 @@ struct DischargedPatientView: View {
         .navigationTitle("Discharged Patients")
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(for: DischargedPatientDataModel.self) { item in
-            ItemDetail(item: item.patient)
+            ItemDetail(item: item.patient, isDischargedPatient: true)
         }
         .alert("Delete Patient", isPresented: $showingAlert, actions: {
             TextField("Username", text: $username)
@@ -74,8 +78,8 @@ struct DischargedPatientView: View {
                     }
                 }
                 isAuthenticating = false
-                
             })
+            
             Button("Cancel", role: .cancel, action: {})
         }, message: {
             Text("Please enter your username and password.")
@@ -84,6 +88,12 @@ struct DischargedPatientView: View {
             Button("Ok", role: .cancel, action: {})
         } message: {
             Text("User name or password doesn't match")
+        }
+        .alert("Do you want to readmit this patient?", isPresented: $showReEntryAlert) {
+            Button("Yes", action: { reEntry(reEntryItem)})
+            Button("Cancel", role: .cancel, action: {})
+        } message: {
+            Text("Their information will be readmitted in the Resident list.")
         }
     }
     

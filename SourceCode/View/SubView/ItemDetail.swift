@@ -8,7 +8,15 @@ import SwiftUI
 
 struct ItemDetail: View {
     let item: PatientDataModel
-
+    @State var isDischargedPatient = false
+    @State private var showingAlert = false
+    
+    @State private var isAuthenticating = false
+    @State private var isAuthenticated = false
+    @State private var authenticationFailed = false
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var isShowingDetailView = false
     var body: some View {
         ScrollView{
             VStack {
@@ -78,9 +86,21 @@ struct ItemDetail: View {
                 Spacer()
             }
             .padding()
+            
+//            NavigationLink(destination: Text("Second View"), isActive: $isShowingDetailView) { EmptyView() }
         }
+        .navigationDestination(isPresented: $isShowingDetailView, destination: {
+            EditPatientView(patientData: item)
+        })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
+                if isDischargedPatient{
+                    Button {
+                        showingAlert = true
+                    } label: {
+                        Text("Edit")
+                    }
+                }
                 NavigationLink {
                     EditPatientView(patientData: item)
                 } label: {
@@ -90,6 +110,38 @@ struct ItemDetail: View {
         }
         .navigationTitle(item.name)
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Edit Patient", isPresented: $showingAlert, actions: {
+            TextField("Username", text: $username)
+            
+            SecureField("Password", text: $password)
+            
+            Button("Edit", action: {
+                isAuthenticating = true
+                isAuthenticated = validateCredentials()
+                if validateCredentials() == false{
+                    authenticationFailed = true
+                    showingAlert = false
+                }
+                if isAuthenticated{
+                    isShowingDetailView = true
+//                    if selectedPatientForDelete != nil {
+//                        modelContext.delete(selectedPatientForDelete!)
+//                    }
+                }
+                isAuthenticating = false
+                
+            })
+            
+            Button("Cancel", role: .cancel, action: {})
+        }, message: {
+            Text("Please enter your username and password.")
+        })
+        
+        .alert("Error", isPresented: $authenticationFailed) {
+            Button("Ok", role: .cancel, action: {})
+        } message: {
+            Text("User name or password doesn't match")
+        }
     }
     private func itemRow(name: String, item: String) -> some View{
         HStack{
@@ -99,6 +151,14 @@ struct ItemDetail: View {
             Text(item)
         }
     }
+    func validateCredentials() -> Bool {
+        for credential in AppConfig.validCredentials {
+                if credential.username == username && credential.password == password {
+                    return true
+                }
+            }
+            return false
+        }
 }
 
 //struct ItemDetail_Previews: PreviewProvider {
